@@ -22,6 +22,7 @@
         "bluetooth",
         "network",
         "custom/power-profiles",
+        "custom/check-bat",
         "custom/language",
         "battery",
         "backlight",
@@ -136,6 +137,11 @@
          "format":"",
          "tooltip": false,
          "on-click":"wlogout",
+    },
+    "custom/check-bat": {
+        "exec": "bash ~/.config/waybar/scripts/check-battery.sh",
+        "interval": 2,
+        "restart-interval": 1
     },
     "bluetooth": {
         "format-on": " On",
