@@ -167,6 +167,20 @@ tooltip {
     border-left: 0px;
 }
 
+#battery.warning {
+    color: yellow;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
+#battery.critical {
+    color: red;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
 #custom-weather {
     border-radius: 0px 10px 10px 0px;
     border-right: 0px;
