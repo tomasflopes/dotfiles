@@ -167,18 +167,20 @@ tooltip {
     border-left: 0px;
 }
 
-#battery.warning {
-    color: yellow;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
-    border-left: 0px;
+#battery.charging.warning {
+    color: #a6e3a1;
 }
 
-#battery.critical {
+#battery.charging.warning {
+    color: #a6e3a1;
+}
+
+#battery.discharging.warning {
+    color: yellow;
+}
+
+#battery.discharging.critical {
     color: red;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
-    border-left: 0px;
 }
 
 #custom-weather {
