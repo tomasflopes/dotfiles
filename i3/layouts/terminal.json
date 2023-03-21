@@ -1,0 +1,74 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1054,
+       "width": 1816,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "i3-save-tree > ~/.config/i3/layouts/terminal.json",
+    "percent": 0.6,
+    "swallows": [
+       {
+        "class": "Gnome-terminal"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1054,
+               "width": 1816,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "kappa-laptop@fedora:~",
+            "percent": 0.7,
+            "swallows": [
+               {
+                "class": "Gnome-terminal"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1054,
+               "width": 1816,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "kappa-laptop@fedora:~",
+            "percent": 0.3,
+            "swallows": [
+               {
+                "class": "Gnome-terminal"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

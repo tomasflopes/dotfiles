@@ -1,0 +1,25 @@
+#!/bin/bash
+
+toggle() {
+  if [ -z "$(ps -al | grep gammastep)" ]; then
+    gammastep -O 4000 -b .85 &
+  else
+    ps -al | grep gammastep | grep -v grep | awk '{print $4}' | xargs kill
+  fi
+}
+
+check() {
+  if [ -z "$(ps -al | grep gammastep)" ]; then
+    echo "{\"text\":\"""\",\"tooltip\":\""On"\"}"
+  else
+    echo "{\"text\":\"""\",\"tooltip\":\""Off"\"}"
+  fi
+}
+
+if [[ "$1" == "--toggle" ]]; then
+	toggle
+elif [[ "$1" == "--get" ]]; then
+	check
+else
+	check
+fi

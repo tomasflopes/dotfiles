@@ -1,0 +1,45 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+window.opacity: 1
+
+font:
+  normal:
+    family: Fira Code Nerd Font
+    style: Medium
+  bold:
+    family: Fira Code Nerd Font
+    bold: Medium
+  italic:
+    family: Fira Code Nerd Font
+    bold: Italic
+  bold_italic:
+    family: Fira Code Nerd Font
+    bold: BoldItalic
+  size: 16
+draw_bold_text_with_bright_colors: true
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+    blink-interval: 750
+
+selection:
+  save_to_clipboard: true
+
+live_ocnfig_reload: true
+
+import:
+  - ~/.config/alacritty/dracula.yml
+shell:
+  program: /usr/bin/zsh

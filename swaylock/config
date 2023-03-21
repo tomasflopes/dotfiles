@@ -1,0 +1,53 @@
+daemonize
+
+clock
+ignore-empty-password
+# show-failed-attempts
+
+font=Prompt
+
+timestr=%X
+datestr=%a %d %b %Y
+fade-in=0.1
+
+grace=0
+grace-no-mouse
+grace-no-touch
+
+# effect-blur=1x50
+# effect-scale=0.1
+
+indicator
+indicator-radius=220
+indicator-thickness=20
+
+color=141215ff
+
+text-color=e0def4
+text-ver-color=e0def4
+text-wrong-color=ff0000
+text-clear-color=e0def4
+text-caps-lock-color=e5bf1b
+
+ring-color=28252a
+ring-ver-color=661ecb
+ring-wrong-color=ff0000
+ring-clear-color=e0def4
+
+line-color=141215
+line-ver-color=661ecb
+line-wrong-color=ff0000
+line-clear-color=141215
+
+inside-color=141215
+inside-ver-color=141215
+inside-wrong-color=141215
+inside-clear-color=141215
+
+bs-hl-color=e0def4
+key-hl-color=661ecb
+# caps-lock-bs-hl-color=dededeff
+# caps-lock-key-hl-color=ffd204ff
+
+separator-color=00000000
+
