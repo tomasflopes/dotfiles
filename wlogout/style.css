@@ -58,4 +58,7 @@ button:focus {
 #reboot:focus {
 /*    background-image: image(url("./assets/restart-hover.png"));*/
 }
+#cancel {
+    background-image: image(url("./assets/cancel.png"));
+}
 

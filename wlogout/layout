@@ -28,4 +28,10 @@
     "text" : "Suspend",
     "keybind" : "u"
 }
+{
+    "label" : "cancel",
+    "action" : "swaymsg exit",
+    "text" : "Cancel",
+    "keybind" : "c"
+}
 
