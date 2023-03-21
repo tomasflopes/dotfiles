@@ -191,6 +191,7 @@ tooltip {
     color: #f1ae53;
     margin-left: 0px;
     border-right: 0px;
+    border-left: 0px;
 }
 
 #custom-temp {
