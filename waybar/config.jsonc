@@ -140,7 +140,7 @@
     },
     "custom/check-bat": {
         "exec": "bash ~/.config/waybar/scripts/check-battery.sh",
-        "interval": 2,
+        "interval": 60,
         "restart-interval": 1
     },
     "bluetooth": {

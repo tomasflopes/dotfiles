@@ -138,6 +138,7 @@ tooltip {
 
 #backlight {
     border-radius: 10px 0px 0px 10px;
+    border-right: 0px;
 }
 
 #pulseaudio {
@@ -187,13 +188,14 @@ tooltip {
     border-radius: 0px 10px 10px 0px;
     border-right: 0px;
     margin-left: 0px;
+    border-left: 0;
 }
 
 #cpu {
     color: #98ce67;
     margin-left: 10px;
-    border-right: 0px;
-    border-left: 0px;
+    border-radius: 10px 0 0 10px;
+    border-right: 0;
 }
 
 #memory {
@@ -201,6 +203,7 @@ tooltip {
     border-radius: 0px 0px 0px 0px;
     margin-left: 0px;
     border-right: 0px;
+    border-left: 0;
 }
 
 #custom-cpu-temp {
