@@ -178,11 +178,11 @@ tooltip {
 }
 
 #battery.discharging.warning {
-    color: yellow;
+    color: #AFAF00;
 }
 
 #battery.discharging.critical {
-    color: red;
+    color: #aa0000;
 }
 
 #custom-weather {
