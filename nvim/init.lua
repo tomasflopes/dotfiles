@@ -427,8 +427,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 -- Get out of insert mod
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
-vim.keymap.set('v', 'jk', '<Esc>')
-vim.keymap.set('v', 'kj', '<Esc>')
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
