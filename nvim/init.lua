@@ -428,6 +428,16 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
 
+-- Harpoon
+
+vim.keymap.set('n', '<C-Right>', "<cmd>lua require('harpoon.ui').nav_next()<cr>")
+vim.keymap.set('n', '<C-Left>', "<cmd>lua require('harpoon.ui').nav_prev()<cr>")
+vim.keymap.set('n', '<leader>j', "<cmd>lua require('harpoon.mark').add_file()<cr>")
+
+vim.keymap.set('n', '<C-CR>', function()
+  require("harpoon.ui").toggle_quick_menu()
+end)
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
