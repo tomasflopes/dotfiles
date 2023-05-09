@@ -13,6 +13,8 @@ alias "m"="tmuxinator"
 alias "flux"="gammastep -O 4000 -b .85 &"
 alias "wifi-list"="nmcli device wifi list"
 alias "wifi-con"="nmcli device wifi connect"
+alias "up"="sudo dnf update"
+alias "i"="sudo dnf install"
 
 alias "c"="clear"
 
