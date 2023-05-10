@@ -429,12 +429,16 @@ vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
 
 -- Harpoon
-
 vim.keymap.set('n', '<C-Right>', "<cmd>lua require('harpoon.ui').nav_next()<cr>")
 vim.keymap.set('n', '<C-Left>', "<cmd>lua require('harpoon.ui').nav_prev()<cr>")
-vim.keymap.set('n', '<leader>j', "<cmd>lua require('harpoon.mark').add_file()<cr>")
+vim.keymap.set('n', '<A-a>', "<cmd>lua require('harpoon.mark').add_file()<cr>")
+vim.keymap.set('n', '<A-1>', "<cmd>lua require('harpoon.ui').nav_file(1)<cr>")
+vim.keymap.set('n', '<A-2>', "<cmd>lua require('harpoon.ui').nav_file(2)<cr>")
+vim.keymap.set('n', '<A-3>', "<cmd>lua require('harpoon.ui').nav_file(3)<cr>")
+vim.keymap.set('n', '<A-4>', "<cmd>lua require('harpoon.ui').nav_file(4)<cr>")
+vim.keymap.set('n', '<A-5>', "<cmd>lua require('harpoon.ui').nav_file(5)<cr>")
 
-vim.keymap.set('n', '<C-CR>', function()
+vim.keymap.set('n', '<A-p>', function()
   require("harpoon.ui").toggle_quick_menu()
 end)
 
