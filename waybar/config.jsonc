@@ -6,6 +6,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 0,
+    "output": [
+        "eDP-1"
+    ],
     "modules-left": [
         "clock",
         "custom/weather",
@@ -93,6 +96,8 @@
         "format-icons": ["", "", ""],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
+        "on-click": "brightnessctl set 10%+",
+        "on-click-right": "brightnessctl set 10%-",
         "min-length": 6
     },
     "battery": {
@@ -160,7 +165,7 @@
     },
     "network": {
 	"interval": 5,
-        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
         "format-wifi": "  {essid}",
         "format-ethernet": "  {ipaddr}/{cidr}",
         "format-linked": "  {ifname} (No IP)",
