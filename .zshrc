@@ -3,7 +3,7 @@ export ZSH="/home/kappa-laptop/.oh-my-zsh"
 
 alias "emulator"="/home/kappa-laptop/Android/Sdk/emulator/emulator"
 alias "edge"="microsoft-edge"
-alias "c."="code ."
+alias "c."="code-insiders ."
 alias "nv"="nvim"
 alias "rb"="shutdown -r 0"
 alias "sd"="shutdown 0"
@@ -12,9 +12,14 @@ alias "open"="nautilus"
 alias "m"="tmuxinator"
 alias "flux"="gammastep -O 4000 -b .85 &"
 alias "wifi-list"="nmcli device wifi list"
+alias "wl"="nmcli device wifi list"
 alias "wifi-con"="nmcli device wifi connect"
-alias "up"="sudo dnf update"
+alias "wic"="nmcli device wifi connect"
+alias "up"="sudo dnf update -y"
 alias "i"="sudo dnf install"
+alias "z"="tar -zcvf"
+alias "unz"="tar -xvg"
+alias "cow"="clear && fortune -as | cowsay -pn"
 
 alias "c"="clear"
 
@@ -23,6 +28,7 @@ alias "vpn-off"="sudo surfshark-vpn down"
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
+export XDG_CURRENT_DESKTOP=GNOME
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -201,7 +207,7 @@ unset env
 clear
 
 # Show greeting message on open
-fortune | cowsay -pn
+fortune -as | cowsay -pn
 # Show system specs
 # neofetch
 
@@ -223,3 +229,4 @@ autoload -Uz _zinit
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 eval "$(github-copilot-cli alias -- "$0")"
+
