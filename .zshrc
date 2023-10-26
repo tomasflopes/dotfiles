@@ -20,6 +20,7 @@ alias "i"="sudo dnf install"
 alias "z"="tar -zcvf"
 alias "unz"="tar -xvg"
 alias "cow"="clear && fortune -as | cowsay -pn"
+alias "status"="docker run --rm -it -v $(pwd):/git arzzen/git-quick-stats"
 
 alias "c"="clear"
 
@@ -230,3 +231,8 @@ autoload -Uz _zinit
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 eval "$(github-copilot-cli alias -- "$0")"
 
+
+# pnpm
+export PNPM_HOME="/home/kappa-laptop/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
