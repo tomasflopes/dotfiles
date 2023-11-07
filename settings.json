@@ -72,7 +72,7 @@
     "repos": "mappings",
     "modules": "components",
     "persistence": "database",
-    "mappers": "tools",
+    "mappers": "json",
     "loaders": "hook",
     "dto": "private",
     "domain": "class",
