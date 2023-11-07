@@ -34,6 +34,7 @@
     alternate-active-foreground: @active-foreground;
     active-background:           rgba ( 29, 31, 33, 27 % );
     selected-active-background:  rgba ( 68, 145, 237, 100 % );
+    font-size:                   18px;
 }
 #window {
     background-color: @background;

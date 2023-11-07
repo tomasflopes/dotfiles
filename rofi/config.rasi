@@ -1,10 +1,10 @@
 /* vim:ft=css */
 configuration {
 modi: "window,drun,run,filebrowser,calc:qalc +u8 -nocurrencies";
-width: 900;
+width: 1200;
 lines: 15;
 columns: 1;
-font: "Open Sans 11";
+font: "Open Sans 20";
 bw: 1;
 /*	location: 0;*/
 /*	padding: 5;*/
