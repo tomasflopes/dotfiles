@@ -186,7 +186,9 @@ tooltip {
 
 #battery.discharging.critical {
     color: #fff;
-    background-color: #aa0000;
+    background-color: #c00;
+    border-radius: 10px;
+    border: 1px solid #a00;
 }
 
 #custom-weather {
@@ -242,3 +244,4 @@ tooltip {
     margin: 4px 2px;
     padding: 0 4px;
 }
+
