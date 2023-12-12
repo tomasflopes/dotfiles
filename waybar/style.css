@@ -5,51 +5,48 @@
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 17.5px;
-    min-height: 0;
+    min-height: 22px;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
+/*    background: rgba(21, 18, 27, 0);*/
+    color: #cdd6f4;
+    background: transparent;
     color: #cdd6f4;
 }
 
 tooltip {
-    background: #1e1e2e;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
+    background: #232845;
+    border-radius: 12px;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #313244;
+    padding: 0 3px 0 0;
+    color: #CDD6F4;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
+    color: #a6adff;
 }
 
 #workspaces button.focused {
     color: #a6adc8;
     background: #eba0ac;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #workspaces button.urgent {
     color: #11111b;
     background: #a6e3a1;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 10px;
+    padding: 0 3px 0 0;
+    background: transparent;
 }
 
-#custom-language,
 #custom-updates,
 #custom-temp,
 #custom-cpu-temp,
@@ -66,18 +63,16 @@ tooltip {
 #tray,
 #custom-vpn,
 #keyboard-state,
-#privacy,
 #cpu,
 #memory,
-#disk,
 #temperature,
 #custom-power-profiles,
 #backlight {
     background: #1e1e2e;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 5px;
     border: 1px solid #181825;
+
+    padding: 0px 10px;
+    margin: 4px 0;
 }
 
 #custom-vpn {
@@ -187,11 +182,12 @@ tooltip {
 }
 
 #battery.discharging.warning {
-    color: #AFAF00;
+    color: #bfbe00;
 }
 
 #battery.discharging.critical {
-    color: #aa0000;
+    color: #fff;
+    background-color: #aa0000;
 }
 
 #custom-weather {

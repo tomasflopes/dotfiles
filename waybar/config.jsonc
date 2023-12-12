@@ -24,8 +24,8 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "custom/check-bat",
         "tray",
+        "custom/check-bat", // this doesn't show up in the bar, just runs the script
         "custom/temp",
         "bluetooth",
         "custom/vpn",
@@ -54,11 +54,13 @@
         "disable-scroll": true,
         "on-click": "activate",
         "all-outputs": true,
+        "format": "{icon}",
         "sort-by-number": true,
-        "format": "{name} {icon}",
+        "persistent-workspaces": {},
         "format-icons": {
-            "active": " ",
-            "default": " "
+            "default": "",
+            "urgent": "",
+            "active": ""
         }
     },
     "custom/temp": {
@@ -87,35 +89,6 @@
         "interval": 30,
         "exec": "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type": "json"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
-        "transition-duration": 250,
-        "modules": [
-            {
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            }
-        ]
     },
     "custom/vpn": {
         "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
@@ -238,10 +211,6 @@
     "memory": {
         "interval": 10,
         "format": " {used:0.1f}G" //      
-    },
-    "disk": {
-        "interval": 30,
-        "format": " Free: {free}"
     },
     "cpu": {
         "interval": 5,
