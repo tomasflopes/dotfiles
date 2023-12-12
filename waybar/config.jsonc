@@ -206,7 +206,7 @@
         "format-disabled": "睊 Disabled",
         "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
         "tooltip-format": " {ifname} via {gwaddr}",
-        "on-click-right": "bash ~/.config/waybar/scripts/toggle-wifi"
+        "on-click-right": "rofi_wifi_menu"
     },
     "memory": {
         "interval": 10,
