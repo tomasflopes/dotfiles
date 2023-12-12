@@ -7,53 +7,58 @@
     "gtk-layer-shell": true,
     "height": 0,
     "output": [
-        "eDP-1"
+        "eDP-1",
+        "HDMI-A-2"
     ],
     "modules-left": [
         "clock",
         "custom/weather",
         "cpu",
         "memory",
+        //        "privacy",
         "custom/cpu-temp",
         "custom/updates",
-        "wlr/workspaces"
+        "hyprland/workspaces"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
+        "custom/check-bat",
         "tray",
         "custom/temp",
         "bluetooth",
+        "custom/vpn",
         "network",
+        "keyboard-state",
         "custom/power-profiles",
-        "custom/check-bat",
-        "custom/language",
         "battery",
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
         "custom/power"
     ],
-
     "hyprland/window": {
         "format": "{}"
     },
-    "wlr/workspaces": {
+    "keyboard-state": {
+        //"numlock": true,
+        "capslock": true,
+        "format": "{name} {icon} ",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": ""
+        }
+    },
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "on-click": "activate",
         "all-outputs": true,
-        // "format": "{icon}",
         "sort-by-number": true,
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+        "format": "{name} {icon}",
+        "format-icons": {
+            "active": " ",
+            "default": " "
         }
     },
     "custom/temp": {
@@ -72,15 +77,50 @@
     },
     "custom/updates": {
         "exec": "echo $(($(dnf list updates | wc -l) - 1))",
-        "interval": 8000,
-        "format": " {}"
+        "interval": 3600,
+        "format": " {}",
+        "on-click": "activate"
     },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "custom/vpn": {
+        "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
+        "interval": 5,
+        "format": "󰌾 {}"
     },
     "tray": {
         "icon-size": 13,
@@ -93,7 +133,11 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "on-click": "brightnessctl set 10%+",
@@ -110,7 +154,19 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -128,7 +184,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
     "pulseaudio#microphone": {
@@ -142,9 +202,9 @@
         "scroll-step": 5
     },
     "custom/power": {
-         "format":"",
-         "tooltip": false,
-         "on-click":"wlogout",
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout"
     },
     "custom/check-bat": {
         "exec": "bash ~/.config/waybar/scripts/check-battery.sh",
@@ -156,15 +216,15 @@
         "format-off": " Off",
         "format-disabled": "",
         "format-connected": " {device_alias}",
-	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "on-click": "bash ~/.config/waybar/scripts/bluetooth",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "on-click": "rofi-bluetooth",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
     "network": {
-	"interval": 5,
+        "interval": 5,
         "interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
         "format-wifi": "  {essid}",
         "format-ethernet": "  {ipaddr}/{cidr}",
@@ -176,16 +236,16 @@
         "on-click-right": "bash ~/.config/waybar/scripts/toggle-wifi"
     },
     "memory": {
-         "interval": 10,
-         "format": " {used:0.1f}G", //      
+        "interval": 10,
+        "format": " {used:0.1f}G" //      
     },
     "disk": {
-         "interval": 30,
-         "format": " Free: {free}",
+        "interval": 30,
+        "format": " Free: {free}"
     },
     "cpu": {
-         "interval": 5,
-         "format": " {usage}%",
+        "interval": 5,
+        "format": " {usage}%"
     },
     "custom/power-profiles": {
         "exec": "~/.config/waybar/scripts/power-profiles --get",
@@ -194,6 +254,5 @@
         "format": "{}",
         "on-click": "~/.config/waybar/scripts/power-profiles --toggle",
         "restart-interval": 1
-    },
+    }
 }
-

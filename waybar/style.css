@@ -64,6 +64,9 @@ tooltip {
 #bluetooth,
 #network,
 #tray,
+#custom-vpn,
+#keyboard-state,
+#privacy,
 #cpu,
 #memory,
 #disk,
@@ -75,6 +78,12 @@ tooltip {
     margin: 3px 0px;
     margin-top: 5px;
     border: 1px solid #181825;
+}
+
+#custom-vpn {
+    color: #f9e2af;
+    padding: 0 4px 0 12px;
+    padding: 0px 0px 0px 12px;
 }
 
 #tray {
