@@ -26,11 +26,11 @@
     "modules-right": [
         "tray",
         "custom/check-bat", // this doesn't show up in the bar, just runs the script
+        "keyboard-state",
         "custom/temp",
         "bluetooth",
         "custom/vpn",
         "network",
-        "keyboard-state",
         "custom/power-profiles",
         "battery",
         "backlight",
@@ -44,10 +44,10 @@
     "keyboard-state": {
         //"numlock": true,
         "capslock": true,
-        "format": "{name} {icon} ",
+        "format": "{icon}",
         "format-icons": {
-            "locked": " ",
-            "unlocked": ""
+            "locked": "Caps",
+            "unlocked": ""
         }
     },
     "hyprland/workspaces": {
@@ -198,7 +198,7 @@
     },
     "network": {
         "interval": 5,
-        "interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "interface": "wlp0s20f3",
         "format-wifi": "  {essid}",
         "format-ethernet": "  {ipaddr}/{cidr}",
         "format-linked": "  {ifname} (No IP)",

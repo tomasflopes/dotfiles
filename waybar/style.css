@@ -62,7 +62,6 @@ tooltip {
 #network,
 #tray,
 #custom-vpn,
-#keyboard-state,
 #cpu,
 #memory,
 #temperature,
@@ -83,7 +82,7 @@ tooltip {
 
 #tray {
     border-radius: 10px;
-    margin-right: 10px;
+    margin-right: 4px;
 }
 
 #workspaces {
@@ -232,3 +231,14 @@ tooltip {
     border-right: 0px;
 }
 
+#keyboard-state label.capslock {
+    color: #8cc2ff;
+}
+
+#keyboard-state label.capslock.locked {
+    background: #84a1e5;
+    color: #000;
+    border-radius: 4px;
+    margin: 4px 2px;
+    padding: 0 4px;
+}
