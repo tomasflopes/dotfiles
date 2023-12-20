@@ -39,7 +39,7 @@
         "custom/power"
     ],
     "hyprland/window": {
-        "format": "{}"
+        "separate-outputs": true
     },
     "keyboard-state": {
         //"numlock": true,
@@ -51,9 +51,8 @@
         }
     },
     "hyprland/workspaces": {
-        // "disable-scroll": true,
-        // "on-click": "activate",
-        // "all-outputs": true,
+        "disable-scroll": true,
+        "all-outputs": true,
         // "format": "{icon}",
         //        "sort-by-number": true,
         // "persistent-workspaces": {},
@@ -62,6 +61,8 @@
         // "urgent": "",
         // "active": ""
         //}
+        //        "format": "{icon}",
+        "on-click": "activate"
     },
     "custom/temp": {
         "format": "{}",

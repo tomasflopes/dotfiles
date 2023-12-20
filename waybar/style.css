@@ -26,10 +26,6 @@ tooltip {
     margin-right: 5px;
 }
 
-#workspaces button.active {
-    color: #a6adff;
-}
-
 #workspaces button.focused {
     color: #a6adc8;
     background: #eba0ac;
