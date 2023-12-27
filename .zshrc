@@ -167,24 +167,32 @@ export EDITOR=/usr/bin/nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ## SPACESHIP CONFIG
-#
 SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
+  time            # Time stamps section
+  user            # Username section
+  dir             # Current directory section
+  host            # Hostname section
+  git             # Git section (git_branch + git_status)
+  hg              # Mercurial section (hg_branch  + hg_status)
+  package         # Package version
+  exec_time       # Execution time
+  line_sep        # Line break
+  vi_mode         # Vi-mode indicator
+  docker          # Docker section
+  jobs            # Background jobs indicator
+  exit_code       # Exit code section
+  char            # Prompt character
 )
+
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_DIR_TRUNC_REPO=true
+SPACESHIP_PACKAGE_PREFIX="via·"
+SPACESHIP_PACKAGE_SUFFIX=" "
+SPACESHIP_PACKAGE_COLOR="green"
+SPACESHIP_PROMPT_SEPARATE_LINE=true
 
 # Remember passphrase for git
 env=~/.ssh/agent.env
