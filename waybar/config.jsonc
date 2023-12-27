@@ -1,229 +1,213 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
-    "output": [
-        "eDP-1",
-        "HDMI-A-2"
-    ],
-    "modules-left": [
-        "clock",
-        "custom/weather",
-        "cpu",
-        "memory",
-        //        "privacy",
-        "custom/cpu-temp",
-        "custom/updates",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "tray",
-        "custom/check-bat", // this doesn't show up in the bar, just runs the script
-        "keyboard-state",
-        "custom/temp",
-        "bluetooth",
-        "custom/vpn",
-        "network",
-        "custom/power-profiles",
-        "battery",
-        "backlight",
-        "pulseaudio",
-        "pulseaudio#microphone",
-        "custom/power"
-    ],
-    "hyprland/window": {
-        "separate-outputs": true
-    },
-    "keyboard-state": {
-        //"numlock": true,
-        "capslock": true,
-        "format": "{icon}",
-        "format-icons": {
-            "locked": "Caps",
-            "unlocked": ""
-        }
-    },
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        // "format": "{icon}",
-        //        "sort-by-number": true,
-        // "persistent-workspaces": {},
-        // "format-icons": {
-        //  "default": "",
-        // "urgent": "",
-        // "active": ""
-        //}
-        //        "format": "{icon}",
-        "on-click": "activate"
-    },
-    "custom/temp": {
-        "format": "{}",
-        "return-type": "json",
-        "tooltip": true,
-        "on-click": "bash ~/.config/waybar/scripts/gammastep --toggle",
-        "exec": "bash ~/.config/waybar/scripts/gammastep --check",
-        "interval": 300,
-        "restart-interval": 1
-    },
-    "custom/cpu-temp": {
-        "format": " {}",
-        "interval": 5,
-        "exec": "sensors | grep 'Package id 0' | awk '{print $4}' | cut -c 2-3"
-    },
-    "custom/updates": {
-        "exec": "echo $(($(dnf list updates | wc -l) - 1))",
-        "interval": 3600,
-        "format": " {}",
-        "on-click": "activate"
-    },
-    "custom/weather": {
-        "tooltip": true,
-        "format": "{}",
-        "interval": 30,
-        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type": "json"
-    },
-    "custom/vpn": {
-        "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
-        "interval": 5,
-        "format": "󰌾 {}"
-    },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{: %R   %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "on-click": "brightnessctl set 10%+",
-        "on-click-right": "brightnessctl set 10%-",
-        "min-length": 6
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": true,
-        "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 1",
-        "on-scroll-down": "pamixer -d 1",
-        "scroll-step": 5,
-        "on-click-right": "pavucontrol",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 1",
-        "on-scroll-down": "pamixer --default-source -d 1",
-        "on-click-right": "pavucontrol",
-        "scroll-step": 5
-    },
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "wlogout"
-    },
-    "custom/check-bat": {
-        "exec": "bash ~/.config/waybar/scripts/check-battery.sh",
-        "interval": 60,
-        "restart-interval": 1
-    },
-    "bluetooth": {
-        "format-on": " On",
-        "format-off": " Off",
-        "format-disabled": "",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "on-click": "rofi-bluetooth",
-        "on-click-right": "bash ~/.config/waybar/scripts/bluetooth",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    },
-    "network": {
-        "interval": 5,
-        "interface": "wlp0s20f3",
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ipaddr}/{cidr}",
-        "format-linked": "  {ifname} (No IP)",
-        "format-disconnected": "睊 Disconnected",
-        "format-disabled": "睊 Disabled",
-        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
-        "tooltip-format": " {ifname} via {gwaddr}",
-        "on-click-right": "rofi_wifi_menu"
-    },
-    "memory": {
-        "interval": 10,
-        "format": " {used:0.1f}G" //      
-    },
-    "cpu": {
-        "interval": 5,
-        "format": " {usage}%"
-    },
-    "custom/power-profiles": {
-        "exec": "~/.config/waybar/scripts/power-profiles --get",
-        "interval": 300,
-        "tooltip": false,
-        "format": "{}",
-        "on-click": "~/.config/waybar/scripts/power-profiles --toggle",
-        "restart-interval": 1
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 0,
+  "output": ["eDP-1", "HDMI-A-2"],
+  "modules-left": [
+    "clock",
+    "custom/weather",
+    "cpu",
+    "memory",
+    //        "privacy",
+    "custom/cpu-temp",
+    "custom/updates",
+    "hyprland/workspaces"
+  ],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "tray",
+    "custom/check-bat", // this doesn't show up in the bar, just runs the script
+    "keyboard-state",
+    "custom/temp",
+    "bluetooth",
+    "custom/vpn",
+    "network",
+    "custom/power-profiles",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "custom/power"
+  ],
+  "hyprland/window": {
+    "separate-outputs": true
+  },
+  "keyboard-state": {
+    //"numlock": true,
+    "capslock": true,
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "Caps",
+      "unlocked": ""
     }
+  },
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "custom/temp": {
+    "format": "{}",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "bash ~/.config/waybar/scripts/gammastep --toggle",
+    "exec": "bash ~/.config/waybar/scripts/gammastep --check",
+    "interval": 300,
+    "restart-interval": 1
+  },
+  "custom/cpu-temp": {
+    "format": " {}",
+    "interval": 5,
+    "exec": "sensors | grep 'Package id 0' | awk '{print $4}' | cut -c 2-3"
+  },
+  "custom/updates": {
+    "exec": "echo $(($(dnf list updates | wc -l) - 1))",
+    "interval": 3600,
+    "format": " {}",
+    "on-click": "activate"
+  },
+  "custom/weather": {
+    "tooltip": true,
+    "format": "{}",
+    "interval": 30,
+    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+    "return-type": "json"
+  },
+  "custom/vpn": {
+    "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
+    "interval": 5,
+    "format": "󰌾 {}"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{: %R   %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big><tt><small>{calendar}</small></tt>"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", ""],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "on-click": "brightnessctl set 10%+",
+    "on-click-right": "brightnessctl set 10%-",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "tooltip": true,
+    "format-muted": " Muted",
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 1",
+    "on-scroll-down": "pamixer -d 1",
+    "scroll-step": 5,
+    "on-click-right": "pavucontrol",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 1",
+    "on-scroll-down": "pamixer --default-source -d 1",
+    "on-click-right": "pavucontrol",
+    "scroll-step": 5
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+  "custom/check-bat": {
+    "exec": "bash ~/.config/waybar/scripts/check-battery.sh",
+    "interval": 60,
+    "restart-interval": 1
+  },
+  "bluetooth": {
+    "format-on": " On",
+    "format-off": " Off",
+    "format-disabled": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "on-click": "rofi-bluetooth",
+    "on-click-right": "bash ~/.config/waybar/scripts/bluetooth",
+    "tooltip-format": "{controller_alias} {controller_address} {num_connections} connected",
+    "tooltip-format-connected": "{controller_alias} {controller_address} {num_connections} connected {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias} {device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} {device_address} {device_battery_percentage}%"
+  },
+  "network": {
+    "interval": 5,
+    "interface": "wlp0s20f3",
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  {ipaddr}/{cidr}",
+    "format-linked": "  {ifname} (No IP)",
+    "format-disconnected": "睊 Disconnected",
+    "format-disabled": "睊 Disabled",
+    "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "on-click-right": "rofi_wifi_menu"
+  },
+  "memory": {
+    "interval": 10,
+    "format": " {used:0.1f}G" //     
+  },
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%"
+  },
+  "custom/power-profiles": {
+    "exec": "~/.config/waybar/scripts/power-profiles --get",
+    "interval": 300,
+    "tooltip": false,
+    "format": "{}",
+    "on-click": "~/.config/waybar/scripts/power-profiles --toggle",
+    "restart-interval": 1
+  }
 }
