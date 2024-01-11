@@ -1,0 +1,37 @@
+import = ["/home/kappa-laptop/.config/alacritty/dracula.toml"]
+live_config_reload = true
+
+[font]
+size = 14
+
+[font.normal]
+family = "Fira Code Nerd Font"
+style = "Medium"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
