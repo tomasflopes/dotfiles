@@ -249,5 +249,6 @@
     ".editor-actions": "display: none",
     ".pane-body": "padding: 4px",
     ".pane-header": "padding: 0 8px"
-  }
+  },
+  "editor.lineNumbers": "relative"
 }
