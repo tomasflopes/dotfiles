@@ -15,16 +15,19 @@
   "editor.renderFinalNewline": "on",
   "editor.parameterHints.enabled": false,
   "editor.renderControlCharacters": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 15,
   "window.zoomLevel": 0.8,
+  "editor.minimap.enabled": false,
   "editor.fontWeight": "400",
-  "editor.lineHeight": 24,
+  "editor.lineHeight": 1.6,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
+  "breadcrumbs.enabled": false,
+  "editor.semanticHighlighting.enabled": false,
   "cSpell.language": "en, pt, pt_PT",
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
@@ -91,6 +94,7 @@
     "requests": "resource",
     "useCase": "controller",
     "types": "Typescript",
+    "unit": "rules",
     "wiki": "Docs",
     "_wiki": "Docs"
   },
@@ -111,7 +115,6 @@
     "javascript": "javascriptreact"
   },
   "editor.columnSelection": false,
-  "breadcrumbs.enabled": true,
   "materialTheme.accent": "Orange",
   "extensions.ignoreRecommendations": false,
   "git.enableSmartCommit": true,
@@ -130,24 +133,20 @@
     "javascript",
     "typescript"
   ],
-  "cSpell.userWords": [
-    "Bootstrapper",
-    "borderless",
-    "button",
-    "scrollbar"
-  ],
+  "cSpell.userWords": ["Bootstrapper", "borderless", "button", "scrollbar"],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.linkedEditing": true,
   "terminal.integrated.fontFamily": "Fira Code",
   "editor.selectionClipboard": true,
   "javascript.suggest.autoImports": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   },
   "eslint.codeActionsOnSave.mode": "all",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
+    "astro",
     "typescript",
     "typescriptreact"
   ],
@@ -157,9 +156,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontLigatures": "'ss02', 'ss19'"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "mohd-akram.vscode-html-format"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -173,10 +169,8 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "python.languageServer": "Default",
   "typescript.disableAutomaticTypeAcquisition": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
   "editor.inlineSuggest.enabled": true,
   "terminal.external.linuxExec": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
@@ -190,7 +184,7 @@
     "asm-intel-x86-generic": true
   },
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "prettier.printWidth": 70,
+  "prettier.printWidth": 80,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
@@ -205,33 +199,55 @@
       "after": ["<Esc>"]
     }
   ],
+  "window.layoutControl.enabled": false,
+  "window.commandCenter": false,
   "editor.cursorSurroundingLines": 4,
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "workbench.colorTheme": "GitHub Dark Default",
-  "editor.cursorStyle": "block",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Min Darkest",
+  "workbench.iconTheme": "symbols",
+  "symbols.hidesExplorerArrows": false,
+  "workbench.statusBar.visible": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
   "workbench.productIconTheme": "material-product-icons",
   "terminal.integrated.scrollback": 10000,
   "editor.cursorSurroundingLinesStyle": "all",
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  },
-  "[blade]": {
-    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
-  },
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
-  "[antlr]": {
-    "editor.defaultFormatter": "mike-lischke.vscode-antlr4"
-  },
   "workbench.editor.enablePreview": false,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "explorer.confirmPasteNative": false,
+  "editor.cursorStyle": "block",
+  "editor.codeActionWidget.showHeaders": false,
+  "editor.codeLens": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.stickyScroll.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, package-lock*, .editorconfig*, .prettier*",
+    "tailwind.config*": "tailwind.config*, postcss.config*",
+    ".env*": ".env*",
+    "README*": "*.md"
+  },
+  "explorer.fileNesting.expand": false,
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "frame": false
+  },
+  "apc.header": {
+    "height": 36
+  },
+  "apc.listRow": {
+    "height": 24
+  },
+  "apc.font.family": "Inter",
+  "apc.stylesheet": {
+    ".title-label > h2": "display: none",
+    ".editor-actions": "display: none",
+    ".pane-body": "padding: 4px",
+    ".pane-header": "padding: 0 8px"
   }
 }

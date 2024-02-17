@@ -443,5 +443,17 @@
   {
     "key": "alt+p",
     "command": "vscode-harpoon.editorQuickPick"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "alt+f4",
+    "command": "-workbench.action.closeWindow"
   }
 ]
