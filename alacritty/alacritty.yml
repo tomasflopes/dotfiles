@@ -25,7 +25,7 @@ font:
   bold_italic:
     family: Fira Code Nerd Font
     bold: BoldItalic
-  size: 16
+  size: 14
 draw_bold_text_with_bright_colors: true
 
 cursor:
@@ -42,7 +42,6 @@ live_config_reload: true
 key_bindings:
   - { key: Return, mods: Shift, chars: "\e[13;2u" }
   - { key: Return, mods: Control, chars: "\e[13;5u" }
-  - { key: Space, mods: Control, chars: "\x00" }
 import:
   - ~/.config/alacritty/dracula.yml
 shell:
