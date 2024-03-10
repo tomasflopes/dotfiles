@@ -17,4 +17,10 @@ code --install-extension drcika.apc-extension &&
 code --install-extension ritwickdey.LiveServer &&
 code --install-extension formulahendry.auto-close-tag &&
 code --install-extension kaiwood.center-editor-window &&
-code --install-extension streetsidesoftware.code-spell-checker-portuguese
+code --install-extension streetsidesoftware.code-spell-checker-portuguese &&
+code --install-extension mikestead.dotenv &&
+code --install-extension shd101wyy.markdown-preview-enhanced &&
+code --install-extension DavidAnson.vscode-markdownlint &&
+code --install-extension pyxel.min-darkest &&
+code --install-extension tobias-z.vscode-harpoon &&
+code --install-extension tomoki1207.pdf
