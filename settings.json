@@ -184,7 +184,6 @@
     "asm-intel-x86-generic": true
   },
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "prettier.printWidth": 80,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
@@ -214,7 +213,7 @@
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
@@ -226,12 +225,12 @@
   "editor.stickyScroll.enabled": false,
   "workbench.layoutControl.enabled": false,
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, package-lock*, .editorconfig*, .prettier*",
-    "tailwind.config*": "tailwind.config*, postcss.config*",
-    ".env*": ".env*",
-    "README*": "*.md"
-  },
+  // "explorer.fileNesting.patterns": {
+  //   "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, package-lock*, .editorconfig*, .prettier*",
+  //   "tailwind.config*": "tailwind.config*, postcss.config*",
+  //   ".env*": ".env*",
+  //   "README*": "*.md"
+  // },
   "explorer.fileNesting.expand": false,
   "apc.electron": {
     "titleBarStyle": "hiddenInset",
@@ -250,5 +249,11 @@
     ".pane-body": "padding: 4px",
     ".pane-header": "padding: 0 8px"
   },
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "workbench.activityBar.location": "hidden",
+  "notebook.formatOnSave.enabled": true
 }

@@ -460,5 +460,21 @@
     "key": "ctrl+p",
     "command": "-extension.vim_ctrl+p",
     "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "extension.vim_ctrl+w"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.files.action.createFileFromExplorer"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.files.action.createFolderFromExplorer"
   }
 ]
