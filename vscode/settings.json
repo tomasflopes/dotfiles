@@ -220,7 +220,7 @@
   "explorer.confirmPasteNative": false,
   "editor.cursorStyle": "block",
   "editor.codeActionWidget.showHeaders": false,
-  "editor.codeLens": false,
+  "editor.codeLens": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.stickyScroll.enabled": false,
   "workbench.layoutControl.enabled": false,
@@ -255,5 +255,36 @@
     "jupyter-notebook": "left"
   },
   "workbench.activityBar.location": "hidden",
-  "notebook.formatOnSave.enabled": true
+  "notebook.formatOnSave.enabled": true,
+  "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "vim.leader": ",",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "vim.visualstar": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#ff9a42",
+  "vim.incsearch": true,
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.codeAction"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "s", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-f>": false
+  },
+  "vim.cursorStylePerMode.insert": "line"
 }
