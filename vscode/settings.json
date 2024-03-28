@@ -288,5 +288,6 @@
     "<C-f>": false
   },
   "vim.cursorStylePerMode.insert": "line",
-  "vim.hlsearch": true
+  "vim.hlsearch": true,
+  "workbench.activityBar.location": "hidden"
 }
