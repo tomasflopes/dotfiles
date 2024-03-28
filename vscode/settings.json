@@ -282,10 +282,35 @@
     {
       "before": ["<Esc>"],
       "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
+    },
+    {
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    {
+      "before": ["leader", "v"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["leader", "h"],
+      "commands": [":split"]
     }
   ],
   "vim.handleKeys": {
-    "<C-f>": false
+    "<C-f>": false,
+    "<C-b>": false
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.hlsearch": true,
