@@ -254,7 +254,6 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "workbench.activityBar.location": "hidden",
   "notebook.formatOnSave.enabled": true,
   "workbench.tree.enableStickyScroll": false,
   "editor.stickyScroll.scrollWithEditor": false,
@@ -267,8 +266,6 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#ff9a42",
   "vim.incsearch": true,
-  "vim.enableNeovim": true,
-  "vim.neovimUseConfigFile": true,
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "c", "a"],
@@ -281,10 +278,15 @@
     {
       "before": ["<leader>", "s", "g"],
       "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<Esc>"],
+      "commands": [":nohl"]
     }
   ],
   "vim.handleKeys": {
     "<C-f>": false
   },
-  "vim.cursorStylePerMode.insert": "line"
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.hlsearch": true
 }
