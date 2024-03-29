@@ -120,6 +120,7 @@
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "editor.linkedEditing": false,
   "colorize.languages": [
     "css",
     "sass",
@@ -131,11 +132,12 @@
     "xml",
     "svg",
     "javascript",
-    "typescript"
+    "typescript",
+    "typescriptreact",
+    "astro"
   ],
   "cSpell.userWords": ["Bootstrapper", "borderless", "button", "scrollbar"],
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.linkedEditing": true,
   "terminal.integrated.fontFamily": "Fira Code",
   "editor.selectionClipboard": true,
   "javascript.suggest.autoImports": true,
