@@ -207,8 +207,9 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+        tsserver = {
+          format_on_save = true,
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -604,6 +605,10 @@ vim.o.termicolors = true
 -- Set relative line numbers
 vim.opt.relativenumber = true
 
+-- Spell check on
+vim.opt.spell = true
+vim.opt.spelllang = 'pt'
+
 -- Show matching
 vim.opt.showmatch = true
 
@@ -626,8 +631,7 @@ vim.opt.softtabstop = 2
 vim.wo.wrap = false
 
 -- Set ruller
-vim.o.colorcolumn = 100
-vim.o.cc = 100
+vim.opt.cc = '100'
 
 -- Auto indent
 vim.opt.autoindent = true
