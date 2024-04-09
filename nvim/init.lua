@@ -606,8 +606,7 @@ vim.o.termicolors = true
 vim.opt.relativenumber = true
 
 -- Spell check on
-vim.opt.spell = true
-vim.opt.spelllang = 'pt'
+vim.opt.spelllang = 'pt_br,en'
 
 -- Show matching
 vim.opt.showmatch = true
@@ -818,6 +817,9 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save current buffer' })
 
 -- Harpoon
 vim.keymap.set('n', '<C-Right>', "<cmd>lua require('harpoon.ui').nav_next()<cr>")
