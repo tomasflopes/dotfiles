@@ -606,7 +606,8 @@ vim.o.termicolors = true
 vim.opt.relativenumber = true
 
 -- Spell check on
-vim.opt.spelllang = 'pt_br,en'
+--vim.opt.spelllang = 'pt,en'
+vim.opt.spell = false
 
 -- Show matching
 vim.opt.showmatch = true
