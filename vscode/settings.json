@@ -290,8 +290,16 @@
       "commands": ["workbench.action.files.save"]
     },
     {
+      "before": ["<leader>", "W"],
+      "commands": ["workbench.action.files.saveAll"]
+    },
+    {
       "before": ["<leader>", "q"],
       "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "Q"],
+      "commands": ["workbench.action.closeAllEditors"]
     },
     {
       "before": ["<leader>", "f"],
