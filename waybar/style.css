@@ -20,25 +20,25 @@ tooltip {
   border-radius: 12px;
 }
 /* 
-#workspaces button {
+workspaces button {
   padding: 0 3px 0 0;
   color: #cdd6f4;
   margin-right: 5px;
 }
 
-#workspaces button.focused {
+workspaces button.focused {
   color: #a6adc8;
   background: #eba0ac;
   border-radius: 8px;
 }
 
-#workspaces button.urgent {
+workspaces button.urgent {
   color: #11111b;
   background: #a6e3a1;
   border-radius: 8px;
 }
 
-#workspaces button:hover {
+workspaces button:hover {
   padding: 0 3px 0 0;
   background: transparent;
 } */
