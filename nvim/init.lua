@@ -819,10 +819,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>qq', '<cmd>q<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save current buffer' })
 vim.keymap.set('n', '<leader>W', '<cmd>wa<CR>', { desc = 'Save all buffers' })
-vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { desc = 'Close all buffers' })
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<CR>', { desc = 'Close all buffers' })
+vim.keymap.set('n', '<leader>Q', '<cmd>q<CR>', { desc = 'Close current buffer without saving' })
 
 -- Harpoon
 vim.keymap.set('n', '<C-Right>', "<cmd>lua require('harpoon.ui').nav_next()<cr>")

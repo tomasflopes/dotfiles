@@ -287,19 +287,23 @@
     },
     {
       "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"]
+      "commands": [":w"]
     },
     {
       "before": ["<leader>", "W"],
-      "commands": ["workbench.action.files.saveAll"]
+      "commands": [":wa"]
     },
     {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "before": ["<leader>", "q", "q"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["<leader>", "q", "a"],
+      "commands": [":qa"]
     },
     {
       "before": ["<leader>", "Q"],
-      "commands": ["workbench.action.closeAllEditors"]
+      "commands": [":q!"]
     },
     {
       "before": ["<leader>", "f"],
