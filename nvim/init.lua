@@ -825,6 +825,12 @@ vim.keymap.set('n', '<leader>W', '<cmd>wa<CR>', { desc = 'Save all buffers' })
 vim.keymap.set('n', '<leader>qa', '<cmd>qa<CR>', { desc = 'Close all buffers' })
 vim.keymap.set('n', '<leader>Q', '<cmd>q<CR>', { desc = 'Close current buffer without saving' })
 
+-- Unbind arrows
+vim.keymap.set('n', '<Up>', '<Nop>')
+vim.keymap.set('n', '<Down>', '<Nop>')
+vim.keymap.set('n', '<Left>', '<Nop>')
+vim.keymap.set('n', '<Right>', '<Nop>')
+
 -- Harpoon
 vim.keymap.set('n', '<C-Right>', "<cmd>lua require('harpoon.ui').nav_next()<cr>")
 vim.keymap.set('n', '<C-Left>', "<cmd>lua require('harpoon.ui').nav_prev()<cr>")

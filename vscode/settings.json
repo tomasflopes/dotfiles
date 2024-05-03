@@ -309,6 +309,23 @@
       "before": ["<leader>", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
+    // unbind arrow keys
+    {
+      "before": ["<up>"],
+      "commands": []
+    },
+    {
+      "before": ["<down>"],
+      "commands": []
+    },
+    {
+      "before": ["<left>"],
+      "commands": []
+    },
+    {
+      "before": ["<right>"],
+      "commands": []
+    },
     {
       "before": ["<S-h>"],
       "commands": [":bprevious"]
