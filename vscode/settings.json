@@ -244,6 +244,9 @@
   "apc.listRow": {
     "height": 24
   },
+  "lifeline.clock.format": "HH:mm",
+  "lifeline.clock.interval": 2000,
+  "lifeline.battery.interval": 5000,
   "apc.font.family": "Inter",
   "apc.stylesheet": {
     ".title-label > h2": "display: none",

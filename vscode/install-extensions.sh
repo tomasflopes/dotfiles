@@ -23,4 +23,5 @@ code --install-extension shd101wyy.markdown-preview-enhanced &&
 code --install-extension DavidAnson.vscode-markdownlint &&
 code --install-extension pyxel.min-darkest &&
 code --install-extension tobias-z.vscode-harpoon &&
-code --install-extension tomoki1207.pdf
+code --install-extension tomoki1207.pdf &&
+code --nstall-extension kjhx.vscode-lifeline
