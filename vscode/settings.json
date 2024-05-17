@@ -305,6 +305,10 @@
       "commands": [":qa"]
     },
     {
+      "before": ["K"], //hover
+      "commands": ["editor.action.showHover"]
+    },
+    {
       "before": ["<leader>", "Q"],
       "commands": [":q!"]
     },
