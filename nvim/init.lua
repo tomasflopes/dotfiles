@@ -486,11 +486,8 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     main = 'ibl',
     opts = {
-      indent = { highlight = { 'CursorColumn', 'Whitespace', 'NonText' }, char = '┊' },
-      whitespace = {
-        highlight = { 'CursorColumn', 'Whitespace', 'NonText' },
-        remove_blankline_trail = false,
-      },
+      indent = { char = '┊' },
+      whitespace = { highlight = { 'Whitespace', 'NonText' } },
       scope = { enabled = true },
     },
   },

@@ -121,6 +121,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-history-enquirer
   git
   yarn
   zsh-completions
@@ -174,7 +175,6 @@ SPACESHIP_PROMPT_ORDER=(
   host            # Hostname section
   git             # Git section (git_branch + git_status)
   hg              # Mercurial section (hg_branch  + hg_status)
-  package         # Package version
   exec_time       # Execution time
   line_sep        # Line break
   vi_mode         # Vi-mode indicator
@@ -243,6 +243,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 eval "$(github-copilot-cli alias -- "$0")"
 
 
+# Change dump dir
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # pnpm
 export PNPM_HOME="/home/kappa-laptop/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -254,3 +257,24 @@ export NVM_DIR="$HOME/.nvm"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kappa-laptop/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kappa-laptop/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kappa-laptop/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kappa-laptop/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
