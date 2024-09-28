@@ -16,7 +16,8 @@
   "editor.parameterHints.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.fontSize": 15,
-  "window.zoomLevel": 0.6,
+  //  "window.zoomLevel": 0.3,
+  "window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "editor.fontWeight": "400",
   "editor.lineHeight": 1.6,
@@ -356,5 +357,6 @@
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.hlsearch": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "auto-close-tag.disableOnLanguage": ["javascript", "typescript", "python"]
 }
