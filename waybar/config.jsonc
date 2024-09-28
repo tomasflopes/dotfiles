@@ -58,15 +58,17 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{name}: {icon}",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "active": "",
-      "default": ""
-    }
+    "format": "{name}",
+    "all-outputs": true
+    //    "format": "{name}: {icon}"
+    // "format-icons": {
+    //   "1": "",
+    //   "2": "",
+    //   "3": "",
+    //   "4": "",
+    //   "active": "",
+    //   "default": ""
+    // }
   },
   "custom/temp": {
     "format": "{}",
