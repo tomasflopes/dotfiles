@@ -16,8 +16,8 @@
   "editor.parameterHints.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.fontSize": 15,
-  //  "window.zoomLevel": 0.3,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.3,
+  //"window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "editor.fontWeight": "400",
   "editor.lineHeight": 1.6,
@@ -122,21 +122,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "editor.linkedEditing": false,
-  "colorize.languages": [
-    "css",
-    "sass",
-    "scss",
-    "less",
-    "postcss",
-    "sss",
-    "stylus",
-    "xml",
-    "svg",
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "astro"
-  ],
+  "colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "javascript", "typescript", "typescriptreact", "astro"],
   "cSpell.userWords": ["Bootstrapper", "borderless", "button", "scrollbar"],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.fontFamily": "Fira Code",
@@ -146,13 +132,7 @@
     "source.organizeImports": "explicit"
   },
   "eslint.codeActionsOnSave.mode": "all",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "astro",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -358,5 +338,8 @@
   "vim.cursorStylePerMode.insert": "line",
   "vim.hlsearch": true,
   "workbench.activityBar.location": "hidden",
-  "auto-close-tag.disableOnLanguage": ["javascript", "typescript", "python"]
+  "auto-close-tag.disableOnLanguage": ["javascript", "typescript", "python"],
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
 }
