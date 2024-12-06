@@ -123,13 +123,15 @@ ZSH_THEME="spaceship"
 plugins=(
   zsh-history-enquirer
   git
-  yarn
+  tmux
   zsh-completions
   fzf-zsh-plugin
   fzf-tab
   zsh-history-substring-search
   fast-syntax-highlighting
   zsh-autosuggestions
+  colorize
+  you-should-use
 )
 
 autoload -U compinit && compinit
