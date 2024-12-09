@@ -264,6 +264,27 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# AOC STUFF
+AOC="~/dev/personal/aoc-2024"
+
+alias aos="python3 main.py < input.txt"
+alias aot="echo -ne '\\e[0;34m'; python3 main.py < test.txt; echo -ne '\\e[0m'"
+alias aoc="aot; echo; aos"
+
+# !FIRST EXPORT THE AOC_COOKIE
+function aol() {
+    if [ $1 ]
+    then
+        curl --cookie "session=$AOC_COOKIE" https://adventofcode.com/$1/day/$2/input > input.txt
+    else
+        curl --cookie "session=$AOC_COOKIE" "$(echo `date +https://adventofcode.com/%Y/day/%d/input` | sed 's/\/0/\//g')" > input.txt
+    fi
+}
+
+pull_all() {
+  for f in */; do; cd $f; git checkout $(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5); git pull; cd ..; done
+}
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/kappa-laptop/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
