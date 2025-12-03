@@ -1,12 +1,16 @@
-import = ["/home/kappa-laptop/.config/alacritty/dracula.toml"]
-live_config_reload = true
+general.import = ["~/.config/alacritty/dracula.toml"]
+general.live_config_reload = true
 
 [font]
-size = 14
+size = 12
 
 [font.normal]
-family = "Fira Code Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Medium"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
 
 [[keyboard.bindings]]
 chars = "\u001B[13;2u"
@@ -25,13 +29,24 @@ multiplier = 3
 [selection]
 save_to_clipboard = true
 
-[shell]
-program = "/usr/bin/zsh"
+[terminal.shell]
+program = "/bin/zsh"
 
 [window.class]
 general = "Alacritty"
 instance = "Alacritty"
 
+[window]
+option_as_alt = 'Both'
+decorations = 'Buttonless'
+startup_mode = 'Windowed'
+dynamic_title = true
+decorations_theme_variant = 'Dark'
+
+[window.dimensions]
+columns = 154
+lines = 45
+
 [window.padding]
-x = 5
-y = 5
+x = 10
+y = 10
