@@ -1,14 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kappa-laptop/.oh-my-zsh"
+export ZSH="/Users/lopest/.oh-my-zsh"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-alias "emulator"="/home/kappa-laptop/Android/Sdk/emulator/emulator"
 alias "edge"="microsoft-edge"
-alias "c."="code-insiders ."
+alias "c."="code ."
 alias "nv"="nvim"
 alias "rr"="shutdown -r 0"
 alias "sd"="shutdown 0"
-alias "n"="nautilus"
-alias "open"="nautilus"
 alias "m"="tmuxinator"
 alias "flux"="gammastep -O 4000 -b .85 &"
 alias "wifi-list"="nmcli device wifi list"
@@ -19,24 +17,17 @@ alias "up"="sudo dnf update -y"
 alias "i"="sudo dnf install"
 alias "z"="tar -zcvf"
 alias "unz"="tar -xvg"
-alias "cow"="clear && fortune -as | cowsay -pn"
+alias "cow"="clear && fortune -s | cowsay -pn"
 alias "status"="docker run --rm -it -v $(pwd):/git arzzen/git-quick-stats"
 alias "docs"="cd ~/docs"
 alias "dot"="cd ~/dotfiles"
 alias "src"="source ~/.zshrc"
+alias "dsta"="docker stop $(docker ps -a -q)"
+alias "drma"="docker rm $(docker ps -a -q)"
+alias "drmi"="docker rmi $(docker images -q)"
+alias "drmav"="docker volume rm $(docker volume ls -q)"
 
 alias "c"="clear"
-
-alias "vpn-on"="sudo surfshark-vpn"
-alias "vpn-off"="sudo surfshark-vpn down"
-
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export XDG_CURRENT_DESKTOP=GNOME
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=/opt/apache-maven-3.8.5/bin:$PATH
 
 export TERM=tmux-256color
 
@@ -46,15 +37,6 @@ export TERM=tmux-256color
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow -E ~/.fdignore"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden -E ~/.fdignore"
-
-## Default prompt
-export EDTOR=vim
-export VISUAL=/usr/bin/nvim
-
-# Remove Teams from autostart everytime it appears
-if [[ -f  ~/.config/autostart/teams.desktop ]]; then
-  rm ~/.config/autostart/teams.desktop
-fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -121,9 +103,9 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-history-enquirer
   git
-  tmux
+  yarn
+  docker
   zsh-completions
   fzf-zsh-plugin
   fzf-tab
@@ -132,6 +114,8 @@ plugins=(
   zsh-autosuggestions
   colorize
   you-should-use
+  tmux
+  autoupdate
 )
 
 autoload -U compinit && compinit
@@ -145,8 +129,8 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export VISUAL=/usr/bin/nvim
-export EDITOR=/usr/bin/nvim
+export VISUAL=/opt/homebrew/bin/nvim
+export EDITOR=/opt/homebrew/bin/nvim
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -176,12 +160,7 @@ SPACESHIP_PROMPT_ORDER=(
   dir             # Current directory section
   host            # Hostname section
   git             # Git section (git_branch + git_status)
-  hg              # Mercurial section (hg_branch  + hg_status)
-  exec_time       # Execution time
   line_sep        # Line break
-  vi_mode         # Vi-mode indicator
-  docker          # Docker section
-  jobs            # Background jobs indicator
   exit_code       # Exit code section
   char            # Prompt character
 )
@@ -196,108 +175,39 @@ SPACESHIP_PACKAGE_SUFFIX=" "
 SPACESHIP_PACKAGE_COLOR="green"
 SPACESHIP_PROMPT_SEPARATE_LINE=true
 
-# Remember passphrase for git
-env=~/.ssh/agent.env
-
-agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
-
-agent_start () {
-    (umask 077; ssh-agent >| "$env")
-    . "$env" >| /dev/null ; }
-
-agent_load_env
-
-# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-    agent_start
-    ssh-add
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    ssh-add
-fi
-
 unset env
-clear
+#clear
 
 # Show greeting message on open
-fortune -as | cowsay -pn
+fortune -s | cowsay -pn
 # Show system specs
 # neofetch
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-  command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-    print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+
+alias aos="python3 solution.py < in.txt"
+alias aot="echo -ne '\\e[0;34m'; python3 solution.py < test.txt; echo -ne '\\e[0m'"
+alias aoc="aot; echo; aos"
+
+function aol () {
+  if [ $1 ]
+  then
+      curl --cookie "session=$AOC_COOKIE" https://adventofcode.com/$1/day/$2/input > in.txt
+  else
+      curl --cookie "session=$AOC_COOKIE" "$(echo `date +https://adventofcode.com/%Y/day/%d/input` | sed 's/\/0/\//g')" > in.txt
+  fi
+}
+
+gla() {
+  for f in */; do; cd $f; git checkout $(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5); git pull; cd ..; done
+}
+
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-eval "$(github-copilot-cli alias -- "$0")"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
-# Change dump dir
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-
-# pnpm
-export PNPM_HOME="/home/kappa-laptop/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# AOC STUFF
-AOC="~/dev/personal/aoc-2024"
-
-alias aos="python3 main.py < input.txt"
-alias aot="echo -ne '\\e[0;34m'; python3 main.py < test.txt; echo -ne '\\e[0m'"
-alias aoc="aot; echo; aos"
-
-# !FIRST EXPORT THE AOC_COOKIE
-function aol() {
-    if [ $1 ]
-    then
-        curl --cookie "session=$AOC_COOKIE" https://adventofcode.com/$1/day/$2/input > input.txt
-    else
-        curl --cookie "session=$AOC_COOKIE" "$(echo `date +https://adventofcode.com/%Y/day/%d/input` | sed 's/\/0/\//g')" > input.txt
-    fi
-}
-
-pull_all() {
-  for f in */; do; cd $f; git checkout $(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5); git pull; cd ..; done
-}
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kappa-laptop/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/kappa-laptop/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/kappa-laptop/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/kappa-laptop/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
