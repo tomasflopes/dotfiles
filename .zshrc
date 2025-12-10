@@ -22,10 +22,12 @@ alias "status"="docker run --rm -it -v $(pwd):/git arzzen/git-quick-stats"
 alias "docs"="cd ~/docs"
 alias "dot"="cd ~/dotfiles"
 alias "src"="source ~/.zshrc"
-alias "dsta"="docker stop $(docker ps -a -q)"
-alias "drma"="docker rm $(docker ps -a -q)"
-alias "drmi"="docker rmi $(docker images -q)"
-alias "drmav"="docker volume rm $(docker volume ls -q)"
+alias "dcu"="docker compose up -d"
+alias "dsta"='docker stop $(docker ps -a -q)'
+alias "drma"='docker rm $(docker ps -a -q)'
+alias "drmi"='docker rmi $(docker images -q)'
+alias "drmav"='docker volume rm $(docker volume ls -q)'
+alias "dcu"="docker compose up -d"
 
 alias "c"="clear"
 
@@ -189,6 +191,7 @@ autoload -Uz _zinit
 alias aos="python3 solution.py < in.txt"
 alias aot="echo -ne '\\e[0;34m'; python3 solution.py < test.txt; echo -ne '\\e[0m'"
 alias aoc="aot; echo; aos"
+
 
 function aol () {
   if [ $1 ]
