@@ -15,9 +15,8 @@
   "editor.renderFinalNewline": "on",
   "editor.parameterHints.enabled": false,
   "editor.renderControlCharacters": true,
-  "editor.fontSize": 15,
-  "window.zoomLevel": 0.3,
-  //"window.zoomLevel": 0,
+  "editor.fontSize": 14,
+  "window.zoomLevel": -1.3,
   "editor.minimap.enabled": false,
   "editor.fontWeight": "400",
   "editor.lineHeight": 1.6,
@@ -36,7 +35,7 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
-  "editor.rulers": [80, 100],
+  "editor.rulers": [100, 120],
   "editor.renderLineHighlight": "gutter",
   "terminal.integrated.fontSize": 14,
   "editor.formatOnPaste": true,
@@ -122,7 +121,21 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "editor.linkedEditing": false,
-  "colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "javascript", "typescript", "typescriptreact", "astro"],
+  "colorize.languages": [
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ],
   "cSpell.userWords": ["Bootstrapper", "borderless", "button", "scrollbar"],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.fontFamily": "Fira Code",
@@ -132,7 +145,13 @@
     "source.organizeImports": "explicit"
   },
   "eslint.codeActionsOnSave.mode": "all",
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -252,10 +271,20 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#ff9a42",
   "vim.incsearch": true,
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "r", "m"],
+      "commands": ["editor.action.refactor"]
+    }
+  ],
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.codeAction"]
+    },
+    {
+      "before": ["<leader>", "r", "m"],
+      "commands": ["editor.action.refactor"]
     },
     {
       "before": ["<leader>", "r", "n"],
@@ -338,8 +367,11 @@
   "vim.cursorStylePerMode.insert": "line",
   "vim.hlsearch": true,
   "workbench.activityBar.location": "hidden",
-  "auto-close-tag.disableOnLanguage": ["javascript", "typescript", "python"],
+  "github.copilot.nextEditSuggestions.enabled": true,
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
-  }
+  },
+  "resmon.show.cpufreq": false,
+  "resmon.show.cpuusage": false,
+  "resmon.show.mem": false
 }
