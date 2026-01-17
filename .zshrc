@@ -27,6 +27,8 @@ alias "dsta"='docker stop $(docker ps -a -q)'
 alias "drma"='docker rm $(docker ps -a -q)'
 alias "drmi"='docker rmi $(docker images -q)'
 alias "drmav"='docker volume rm $(docker volume ls -q)'
+alias "dsls"="docker service ls"
+alias "dsrm"="docker service rm"
 alias "dcu"="docker compose up -d"
 
 alias "c"="clear"
@@ -192,6 +194,7 @@ alias aos="python3 solution.py < in.txt"
 alias aot="echo -ne '\\e[0;34m'; python3 solution.py < test.txt; echo -ne '\\e[0m'"
 alias aoc="aot; echo; aos"
 
+export AOC_COOKIE=
 
 function aol () {
   if [ $1 ]
@@ -212,5 +215,16 @@ gla() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH="$PATH:/Users/lopest/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# pnpm
+export PNPM_HOME="/Users/lopest/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="$HOME/.local/bin:$PATH"
