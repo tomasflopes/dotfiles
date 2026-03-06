@@ -167,9 +167,16 @@ nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
 xmap <leader>r <Action>(Refactorings.QuickListPopupAction)
 nnoremap <leader>ic :action IntroduceConstant <CR>
 
+" format code
+nnoremap <leader>fc :action ReformatCode<CR>
+
 map <C-p> <Action>(GotoFile)
 map <C-k> <Action>(MoveLineUp)
 map <C-j> <Action>(MoveLineDown)
+
+" tab management
+nnoremap <A-h> :tabprevious<CR>
+nnoremap <A-l> :tabnext<CR>
 
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 
