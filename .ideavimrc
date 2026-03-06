@@ -1,0 +1,191 @@
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+set scrolloff=5
+
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 200
+let g:highlightedyank_highlight_color = "rgba(230, 130, 0, 100)"
+
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-u> <Plug>RemoveOccurrence
+
+set clipboard+=unnamedplus
+set multicursor
+let mapleader = ","
+
+" Set to true if you have a Nerd Font installed
+let g:have_nerd_font = 1
+
+set hlsearch
+nnoremap <Esc> :nohlsearch<CR>
+set so=5
+
+set ideajoin
+set idearefactormode=keep
+set ideastatusicon=gray
+
+" Make line numbers default
+set number
+
+" Enable comments
+set commentary
+
+" Speed up scroll
+set ttyfast
+
+" Don't show the mode, since it's already in status line
+set showmode=0
+
+" Highlight current line
+set cursorline
+
+" Enable mouse mode
+set mouse=a
+
+" Scroll off
+set scrolloff=8
+
+" Set relative line numbers
+set relativenumber
+
+" Spell check off
+set nospell
+
+" Show matching
+set showmatch
+
+" Sets how neovim will display certain whitespace characters in the editor.
+set nolist
+
+" Set incremental search
+set incsearch
+
+" Convert tab to white tabs
+set expandtab
+
+" Preview substitutions live, as you type!
+set inccommand=split
+
+" Auto indent
+set shiftwidth=2
+set smarttab
+set tabstop=2
+set softtabstop=2
+
+" No wrap
+set nowrap
+
+" Set ruler
+set cc=100
+
+" Auto indent
+set autoindent
+
+" Sync clipboard between OS and Neovim.
+set clipboard^=unnamed,unnamedplus
+
+" Enable break indent
+set breakindent
+
+" Save undo history
+set undofile
+set history=1000
+set nrformats-=octal
+
+" Case insensitive searching UNLESS /C or capital in search
+set ignorecase
+set smartcase
+
+" Keep signcolumn on by default
+set signcolumn=yes
+
+" Decrease update time
+set updatetime=250
+set timeoutlen=300
+
+" Configure how new splits should be opened
+set splitright
+set splitbelow
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noselect
+
+" NOTE: You should make sure your terminal supports this
+set termguicolors
+
+set title
+set autoindent
+set smartindent
+set nobackup
+
+" [[ Basic Keymaps ]]
+
+" Keymaps for better default experience
+" See `:help map`
+nnoremap <Space> <Nop>
+vnoremap <Space> <Nop>
+
+" Get out of insert mode
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" Buffer management
+nnoremap <leader>qq :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>Q :q!<CR>
+
+" Unbind arrows
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+
+map <leader>wv <Action>(SplitVertical)
+map <leader>wh <Action>(SplitHorizontal)
+
+map gd <Action>(GotoDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gr <Action>(GotoReferences)
+map <leader>gt <Action>(GotoTypeDefinition)
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+
+map <leader>K <Action>(ShowHoverInfo)
+map <leader>sg <Action>(FindInPath)nnoremap
+map <leader>ca <Action>(ShowIntentionActions)
+nnoremap gcc :action CommentByLineComment<CR>
+
+vnoremap <leader>em <Action>(ExtractMethod)
+
+nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+xmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+nnoremap <leader>ic :action IntroduceConstant <CR>
+
+map <C-p> <Action>(GotoFile)
+map <C-k> <Action>(MoveLineUp)
+map <C-j> <Action>(MoveLineDown)
+
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+" Harpoon
+nmap <A-e> <action>(HarpoonerToggleQuickMenu)
+nmap <A-a> <action>(HarpoonerAddFile)
+
+nmap <A-1> <action>(HarpoonerOpenFile0)
+nmap <A-2> <action>(HarpoonerOpenFile1)
+nmap <A-3> <action>(HarpoonerOpenFile2)
+nmap <A-4> <action>(HarpoonerOpenFile3)
+
+map <C-B> :NERDTreeToggle<cr>
+
+"map<C-n> <Action>(SelectNextOccurrence)
+"map<C-u> <Action>(UnselectNextOccurrence)
+
+" The line beneath this is called `modeline`. See `:help modeline`
+" vim: ts=2 sts=2 sw=2 et
