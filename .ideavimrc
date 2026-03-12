@@ -1,5 +1,6 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
+remap
 set scrolloff=5
 
 Plug 'machakann/vim-highlightedyank'
@@ -9,6 +10,14 @@ let g:highlightedyank_highlight_color = "rgba(230, 130, 0, 100)"
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+
+set which-key
+let g:WhichKey_FontSize = 11
+set notimeout
+set timeoutlen=5000
+
+let g:multi_cursor_quit_key = '<Esc>'
+let g:multi_cursor_exit_from_insert_mode = 1
 
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
@@ -146,18 +155,22 @@ nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 
-map <leader>wv <Action>(SplitVertical)
-map <leader>wh <Action>(SplitHorizontal)
+map <leader>sv <Action>(SplitVertical)
+map <leader>sh <Action>(SplitHorizontal)
 
-map gd <Action>(GotoDeclaration)
-map <leader>gi <Action>(GotoImplementation)
-map <leader>gr <Action>(GotoReferences)
-map <leader>gt <Action>(GotoTypeDefinition)
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gr :action GotoReferences<CR>
+nnoremap gt  :action GotoTest<CR>
+nnoremap gy  :action GotoTypeDeclaration<CR>
+nnoremap <leader>gl  :action RecentLocations<CR>
+
 map <leader>rn <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)
+nnoremap <leader>pr  :action Run<CR>
 
 map <leader>K <Action>(ShowHoverInfo)
-map <leader>sg <Action>(FindInPath)nnoremap
+map <leader>sg <Action>(FindInPath)
 map <leader>ca <Action>(ShowIntentionActions)
 nnoremap gcc :action CommentByLineComment<CR>
 
@@ -189,7 +202,11 @@ nmap <A-2> <action>(HarpoonerOpenFile1)
 nmap <A-3> <action>(HarpoonerOpenFile2)
 nmap <A-4> <action>(HarpoonerOpenFile3)
 
-map <C-B> :NERDTreeToggle<cr>
+nmap <leader>rt <Action>(RerunTests)
+
+namp <Esc> :noh<CR>
+
+" remove all carets
 
 "map<C-n> <Action>(SelectNextOccurrence)
 "map<C-u> <Action>(UnselectNextOccurrence)
