@@ -4,7 +4,7 @@ remap
 set scrolloff=5
 
 Plug 'machakann/vim-highlightedyank'
-let g:highlightedyank_highlight_duration = 200
+let g:highlightedyank_highlight_duration = 180
 let g:highlightedyank_highlight_color = "rgba(230, 130, 0, 100)"
 
 Plug 'tpope/vim-commentary'
@@ -147,7 +147,7 @@ inoremap kj <Esc>
 nnoremap <leader>qq :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>qa :qa<CR>
-nnoremap <leader>Q :q!<CR>
+nnoremap Q :tabonly<CR>
 
 " Unbind arrows
 nnoremap <Up> <Nop>
@@ -161,13 +161,13 @@ map <leader>sh <Action>(SplitHorizontal)
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gr :action GotoReferences<CR>
-nnoremap gt  :action GotoTest<CR>
-nnoremap gy  :action GotoTypeDeclaration<CR>
-nnoremap <leader>gl  :action RecentLocations<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gy :action GotoTypeDeclaration<CR>
+nnoremap <leader>gl :action RecentLocations<CR>
 
 map <leader>rn <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)
-nnoremap <leader>pr  :action Run<CR>
+nnoremap <leader>pr :action Run<CR>
 
 map <leader>K <Action>(ShowHoverInfo)
 map <leader>sg <Action>(FindInPath)
@@ -205,8 +205,6 @@ nmap <A-4> <action>(HarpoonerOpenFile3)
 nmap <leader>rt <Action>(RerunTests)
 
 namp <Esc> :noh<CR>
-
-" remove all carets
 
 "map<C-n> <Action>(SelectNextOccurrence)
 "map<C-u> <Action>(UnselectNextOccurrence)
