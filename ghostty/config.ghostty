@@ -1,0 +1,12 @@
+theme = dracula
+
+font-family = Fira Code Nerd Font
+font-size = 13
+
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+macos-icon = glass
+
+window-padding-x = 8
+window-padding-y = 8
