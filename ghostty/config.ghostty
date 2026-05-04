@@ -10,7 +10,7 @@ window-subtitle = working-directory
 
 macos-option-as-alt = true
 
-macos-icon = glass
+macos-icon = xray
 
 copy-on-select = true
 mouse-scroll-multiplier = 3
