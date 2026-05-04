@@ -16,8 +16,8 @@ copy-on-select = true
 mouse-scroll-multiplier = 3
 scrollback-limit = 10000
 
-window-padding-x = 8,0
-window-padding-y = 8,0
+window-padding-x = 6,0
+window-padding-y = 6,0
 window-padding-color = extend
 
 window-height = 42
