@@ -1,12 +1,24 @@
 theme = dracula
+window-theme = ghostty
 
 font-family = Fira Code Nerd Font
 font-size = 13
 
 macos-titlebar-style = hidden
+window-decoration = none
+window-subtitle = working-directory
+
 macos-option-as-alt = true
 
 macos-icon = glass
 
-window-padding-x = 8
-window-padding-y = 8
+copy-on-select = true
+mouse-scroll-multiplier = 3
+scrollback-limit = 10000
+
+window-padding-x = 8,0
+window-padding-y = 8,0
+window-padding-color = extend
+
+window-height = 42
+window-width = 140
